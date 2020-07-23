@@ -7,6 +7,7 @@
 #chose between different digit ranges, levels 1 - 10 
     #show the numbers that you will get on each level
 #combine stuff into more functions to make the code shorter
+# how close to correct answer if wrong, measure with percentages and have thresholds: very close (within 5%), close (10%), try again (75%), not even close (other)
 import random
 ####
 def addition():
@@ -72,7 +73,7 @@ def subtraction():
     correct_percentage = round(correct_percentage)  #rounding to 0 decimal places omits the second argument
     print(str(correct_percentage) + "% correct", end = "\n\n")
 ####
-##########################################################################################################################################################  Main Code ####################
+##########################################################################################################################################################  Main Code ####
 print("Welcome to the mental maths trainer\nYou can pick the type of problems to solve, how many, and how difficult.", end = "\n\n")
 number_questions = int(input("Choose the number of questions to solve: "))
 question_type =  str(input("Choose types of question to answer.\n(A) Addition\n(S) Subtraction\n(M) Multiplication\n(D) Division\nSelection: "))
