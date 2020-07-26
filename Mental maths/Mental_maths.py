@@ -73,6 +73,42 @@ def subtraction():
     correct_percentage = round(correct_percentage)  #rounding to 0 decimal places omits the second argument
     print(str(correct_percentage) + "% correct", end = "\n\n")
 ####
+def multiplication():
+    correct_answers = 0
+    question_diff_mode = str(input("Enter which difficulty mode you want. Options:\neasy\nmedium\nhard\nSelection: "))
+    for i in range(number_questions):
+        if question_diff_mode == "easy": number_1 = random.randint(2,20)
+        if question_diff_mode == "medium": number_1 = random.randint(10,100)
+        if question_diff_mode == "hard": number_1 = random.randint(100,1000)
+        if question_diff < 5:
+            number_2_rand = random.randint(0,1) #either 0 or 1, as each option of the first levels have two possible options for no 2 which is randomly chosen.
+            number_2_lst1 = [2, 4, 3, 6, 5]
+            number_2_lst2 = [4, 8, 6, 9, 7]
+            if number_2_rand == 0: number_2 = number_2_lst1[question_diff] 
+            if number_2_rand == 1: number_2 = number_2_lst2[question_diff] 
+        else:
+            diff_level_max = [0, 0, 0, 0, 0, 10, 15, 20, 50, 100]
+            number_2 = random.randint(2,diff_level_max[question_diff])
+        solution = number_1 * number_2
+        number_1_str = (3 - len(str(number_1))) * " " + str(number_1)
+        number_2_str = (3 - len(str(number_2))) * " " + str(number_2)
+        check_solution = 0
+        first_attempt = 1
+        while check_solution == 0:
+            print("\nWhat is ", number_1_str, "\n      x ", number_2_str, "?")
+            user_solution = int(input("Answer: "))
+            if solution == user_solution:
+                print("Correct!")
+                if first_attempt == 1:  #only gives a point if the answer was right the first time.
+                    correct_answers += 1
+                check_solution = 1 
+            else:
+                print("Incorrect answer, try again...")
+                first_attempt = 0
+    print("\nYou scored: " + str(correct_answers)+"/" + str(number_questions))
+    correct_percentage = correct_answers / number_questions * 100
+    correct_percentage = round(correct_percentage)  #rounding to 0 decimal places omits the second argument
+    print(str(correct_percentage) + "% correct", end = "\n\n")
 ##########################################################################################################################################################  Main Code ####
 print("Welcome to the mental maths trainer\nYou can pick the type of problems to solve, how many, and how difficult.", end = "\n\n")
 number_questions = int(input("Choose the number of questions to solve: "))
