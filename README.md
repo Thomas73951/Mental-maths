@@ -1,7 +1,9 @@
 # Mental-maths
 Simple mental maths trainer.
 
-**NOTE: This is still work in progress, uses the command line, and isn't very efficiently coded.**
+~~**NOTE: This is still work in progress, uses the command line, and isn't very efficiently coded.**~~
+
+Actually this may have been abandoned. Some of it does work but not all of it and the code isn't that great... 
 
 # Features
 ## Modes
